@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.1.0
+
+jobs: 
+  test:
+    parameters:
+      node-version:
+        type: string
+    executor: node/default
+    steps:
+      - checkout
+      - node/install:
+          node-version: << parameters.node-version >>
+          install-yarn: false
+      - run: npm run test
+
+workflows:
+  matrix-tests:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              node-version: ["13.11.0", "12.16.0"]
