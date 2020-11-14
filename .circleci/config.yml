@@ -5,21 +5,14 @@ orbs:
 
 jobs: 
   test:
-    parameters:
-      node-version:
-        type: string
     executor: node/default
     steps:
       - checkout
-      - node/install:
-          node-version: << parameters.node-version >>
-          install-yarn: false
+      - node/install-packages:
+          cache-path: ~/project/node_modules
       - run: npm run test
 
 workflows:
   matrix-tests:
     jobs:
-      - test:
-          matrix:
-            parameters:
-              node-version: ["13.11.0", "12.16.0"]
+      - test
