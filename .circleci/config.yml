@@ -22,9 +22,3 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
-      
-
-workflows:
-  matrix-tests:
-    jobs:
-      - test
