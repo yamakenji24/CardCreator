@@ -19,5 +19,12 @@ export default class MyDocument extends Document {
 
 MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   const initialProps = await Document.getInitialProps(ctx)
-  return { ...initialProps }
+  return {
+    ...initialProps, 
+    styles: (
+      <>
+        {initialProps.styles}
+      </>
+    )
+  }
 };
