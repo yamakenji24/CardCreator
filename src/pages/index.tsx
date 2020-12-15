@@ -1,6 +1,7 @@
-import { CardLayout } from '../components/card/cardlayout';
-import { FooterLayout } from '../components/footer';
-import { NavBar } from '../components/navBar';
+import { CardLayout } from '../ui/card/cardlayout';
+import { FooterLayout } from '../ui/footer';
+import { NavBar } from '../ui/navBar';
+import { SignIn } from '../ui/signin';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <h2 className="m-0 leading-tight text-6xl text-center">
           Create your own card!!
         </h2>
+        <SignIn />
         <CardLayout />
       </div>
       <FooterLayout />
