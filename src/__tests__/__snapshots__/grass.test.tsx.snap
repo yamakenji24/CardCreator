@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Grass /> render grass img from existing projects 1`] = `
+<DocumentFragment>
+  <img
+    class="ml-28 w-96"
+    src="https://grass-graph.moshimo.works/images/yamakenji24.png?background=none"
+  />
+</DocumentFragment>
+`;

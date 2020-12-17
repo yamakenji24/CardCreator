@@ -11,7 +11,7 @@ export const Icon = ({name, icon}: Props) => {
       <div className="h-8 w-8 mt-1 mr-2">
         <img src={"/"+ icon +".svg"} alt={name} />
       </div>
-      {name}
+      <p>{name}</p>
     </div>
   );
 };

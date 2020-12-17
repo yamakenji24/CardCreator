@@ -1,6 +1,10 @@
+interface Props {
+  provider: string;
+  name: string;
+}
 
-export const Grass = ({boolProvider, name}): JSX.Element => {
-  if(!boolProvider) return null;
+export const Grass = ({provider, name}: Props): JSX.Element => {
+  if(provider !== 'github') return null;
 
   return (
     <img 

@@ -11,7 +11,10 @@ export default function Home() {
         <h2 className="m-0 leading-tight text-6xl text-center">
           Create your own card!!
         </h2>
-        <SignIn />
+        
+        <SignIn provider="github" />
+        <SignIn provider="google" />
+
         <CardLayout />
       </div>
       <FooterLayout />

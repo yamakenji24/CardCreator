@@ -1,18 +1,18 @@
-import { signIn, signOut } from 'next-auth/client'
+import { signIn } from 'next-auth/client'
+import { MouseEvent } from 'react';
 
-export const SignIn = (): JSX.Element => {
+interface Props {
+  provider: string;
+}
 
-  const github = () => {
-    signIn('github')
-  }
-  const google = () => {
-    signIn('google')
+export const SignIn = ({provider}: Props): JSX.Element => {
+  const signInButton = (event: MouseEvent<HTMLElement>) => {
+    signIn(event.currentTarget.dataset.name)
   }
 
   return (
     <div>
-      <button onClick={github}>Sign In with Github</button>
-      <button onClick={google}>Sign In with Google</button>
+      <button data-name={provider} onClick={signInButton}>Sign In with {provider}</button>
     </div>
   )
 }

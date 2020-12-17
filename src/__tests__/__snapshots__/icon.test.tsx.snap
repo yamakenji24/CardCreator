@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon /> render icon img and text snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="mr-0 ml-24 text-gray-100 flex"
+  >
+    <div
+      class="h-8 w-8 mt-1 mr-2"
+    >
+      <img
+        alt="testing"
+        src="/logo.svg"
+      />
+    </div>
+    <p>
+      testing
+    </p>
+  </div>
+</DocumentFragment>
+`;
