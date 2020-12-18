@@ -10,7 +10,6 @@ import { useChangeColor } from '../utils/useChangeColor';
 export default function Home() {
   const [changeInnerColor, changeOuterColor, {innerColor, outerColor}] = useChangeColor(); 
   console.log("in: ", innerColor,  "out: ", outerColor)
-  console.log("clientID: ", process.env.GITHUB_CLIENT)
 
   return (
     <div className="min-h-screen flex flex-col justify-items-center">
