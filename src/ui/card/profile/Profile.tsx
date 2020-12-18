@@ -1,5 +1,6 @@
 import { Icon } from "./Icon";
 import { ProfileType } from '../../../utils/getProfile';
+import Image from 'next/image';
 
 export const Profile = ({
   name, picture, twitter, provider, email, blog
@@ -7,7 +8,7 @@ export const Profile = ({
   return (
     <div className="py-2 pl-12">
       <div className="flex flex-row">
-        <img　src={picture}　alt={name}　className="w-28 h-28 rounded-full"　/>
+        <Image　src={picture}　alt={name}　className="rounded-full"　width="120" height="120"/>
         <div className="flex flex-col">
           <p className="text-3xl ml-24 mb-3 -mt-4 font-bold text-white">{name}</p>
           <Icon name={name} icon={provider}/>

@@ -1,21 +1,29 @@
+import * as React from 'react';
 import { CardLayout } from '../ui/card/cardlayout';
-import { FooterLayout } from '../ui/footer';
+import { FooterLayout } from '../ui/FooterLayout';
 import { NavBar } from '../ui/navBar';
-import { SignIn } from '../ui/signin';
+import { Title } from '../ui/Title';
+import { SignInLayout } from '../ui/SignIn/SignInLayout';
+import { ColorButtonLayout } from '../ui/ColorButtonLayout';
+import { useChangeColor } from '../utils/useChangeColor';
 
 export default function Home() {
-  return (
-    <div className="min-h-screen flex flex-col justify-center	justify-items-center">
-      <NavBar />
-      <div className="flex flex-col justify-center items-center">
-        <h2 className="m-0 leading-tight text-6xl text-center">
-          Create your own card!!
-        </h2>
-        
-        <SignIn provider="github" />
-        <SignIn provider="google" />
+  const [changeInnerColor, changeOuterColor, {innerColor, outerColor}] = useChangeColor(); 
+  console.log("in: ", innerColor,  "out: ", outerColor)
 
-        <CardLayout />
+  return (
+    <div className="min-h-screen flex flex-col justify-items-center">
+      <NavBar />
+      <div className="flex flex-col mb-10 items-center">
+        <Title text="Create your own card!!" />
+        <SignInLayout />
+        
+        <ColorButtonLayout 
+          changeInnerColor={changeInnerColor}
+          changeOuterColor={changeOuterColor}
+        />
+       
+        <CardLayout innerColor={innerColor} outerColor={outerColor}/>
       </div>
       <FooterLayout />
     </div>

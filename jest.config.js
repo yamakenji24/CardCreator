@@ -10,5 +10,6 @@ module.exports = {
         jsx: 'react'
       }
     }
-  }
+  },
+  setupFiles: ["<rootDir>/setupTest.js"],
 };
