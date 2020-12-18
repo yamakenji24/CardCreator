@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { CardLayout } from '../ui/card/cardlayout';
 import { FooterLayout } from '../ui/FooterLayout';
 import { NavBar } from '../ui/navBar';
@@ -9,6 +10,7 @@ import { useChangeColor } from '../utils/useChangeColor';
 export default function Home() {
   const [changeInnerColor, changeOuterColor, {innerColor, outerColor}] = useChangeColor(); 
   console.log("in: ", innerColor,  "out: ", outerColor)
+  console.log("clientID: ", process.env.GITHUB_CLIENT)
 
   return (
     <div className="min-h-screen flex flex-col justify-items-center">
