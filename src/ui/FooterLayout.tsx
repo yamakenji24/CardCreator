@@ -1,7 +1,8 @@
+import Image from 'next/image';
 
 export const FooterLayout = (): JSX.Element => {
   return (
-    <footer className="w-full h-full border border-solid border-gray-300  items-center">
+    <footer className="border-t border-solid border-gray-300  items-center">
       <a
         href="https://github.com/yamakenji24/CardCreator"
         target="_blank"
@@ -9,7 +10,7 @@ export const FooterLayout = (): JSX.Element => {
         className="flex justify-center items-center"
       >
         Created by yamakenji24
-        <img className="m-2 h-8" src="https://github.com/yamakenji24.png" alt="yamakenji24" />
+        <Image width="40" height="40" src="https://github.com/yamakenji24.png" alt="yamakenji24" />
       </a>
    </footer>
   )

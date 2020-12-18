@@ -5,13 +5,13 @@ interface Props {
   provider: string;
 }
 
-export const SignIn = ({provider}: Props): JSX.Element => {
+export const SignIn = ({provider}: Props) => {
   const signInButton = (event: MouseEvent<HTMLElement>) => {
     signIn(event.currentTarget.dataset.name)
   }
 
   return (
-    <div>
+    <div className="mx-3">
       <button data-name={provider} onClick={signInButton}>Sign In with {provider}</button>
     </div>
   )
