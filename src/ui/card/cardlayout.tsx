@@ -4,7 +4,6 @@ import { OuterColorType } from '../../utils/useChangeColor';
 import { EmptyCardLayout } from './emptyCardProfile';
 import { Grass } from './grass';
 import { isNullOrUndefined } from 'util';
-import Image from 'next/image';
 
 interface Props {
   innerColor: string;
@@ -17,10 +16,10 @@ export const CardLayout = ({
   const {profileData} = useGetSession();
   if(isNullOrUndefined(profileData)) return <EmptyCardLayout innerColor={innerColor} outerColor={outerColor}/>
   return (
-   <div className={"w-crd h-80 my-10 mx-auto relative border-4 border-solid border-white p-1.5 rounded-3xl bg-gradient-to-r from-"+outerColor.from+" via-"+outerColor.via+" to-"+outerColor.to}>
+   <div id="cardScreen" className={"w-crd h-80 my-10 mx-auto relative border-4 border-solid border-white p-1.5 rounded-3xl bg-gradient-to-r from-"+outerColor.from+" via-"+outerColor.via+" to-"+outerColor.to}>
       <div className={"w-full h-full rounded-3xl bg-" + innerColor}>
         <div className="flex">
-          <Image src="/logo.png" className="rounded-full" width="100" height="100"/>
+          <img src={"/_next/image?url=%2Flogo.svg&w=384&q=75"} className="rounded-full" width='100' height='100' />
           <Grass provider={profileData.provider} name={profileData.name} />
         </div>
         <Profile 

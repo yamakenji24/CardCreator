@@ -6,10 +6,10 @@ import { Title } from '../ui/Title';
 import { SignInLayout } from '../ui/SignIn/SignInLayout';
 import { ColorButtonLayout } from '../ui/ColorButtonLayout';
 import { useChangeColor } from '../utils/useChangeColor';
+import { SaveButton } from '../ui/SaveButton';
 
 export default function Home() {
   const [changeInnerColor, changeOuterColor, {innerColor, outerColor}] = useChangeColor(); 
-  console.log("in: ", innerColor,  "out: ", outerColor)
 
   return (
     <div className="min-h-screen flex flex-col justify-items-center">
@@ -22,7 +22,7 @@ export default function Home() {
           changeInnerColor={changeInnerColor}
           changeOuterColor={changeOuterColor}
         />
-       
+        <SaveButton />
         <CardLayout innerColor={innerColor} outerColor={outerColor}/>
       </div>
       <FooterLayout />
